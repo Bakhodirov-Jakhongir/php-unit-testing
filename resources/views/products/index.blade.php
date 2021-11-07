@@ -17,16 +17,18 @@
                         <table class="table">
                             <tr>
                                 <th>Product Name</th>
-                                <th>Product Price</th>
+                                <th>Product Price (dollar)</th>
+                                <th>Product Price(euro)</th>
                             </tr>
                             @forelse ($products as $product)
                                 <tr>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->price }}</td>
+                                    <td>{{ $product->price_euro }}</td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="2">No products found.</td>
+                                    <td colspan="3">No products found.</td>
                                 </tr>
                             @endforelse
                         </table>

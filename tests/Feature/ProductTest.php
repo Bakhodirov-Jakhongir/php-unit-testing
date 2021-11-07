@@ -21,24 +21,24 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_homepage_contains_non_empty_products_table()
-    {
-        $product = Product::create([
-            'name' => 'Product 1',
-            'price' => '99.99'
-        ]);
+    // public function test_homepage_contains_non_empty_products_table()
+    // {
+    //     // $product = Product::create([
+    //     //     'name' => 'Product 1',
+    //     //     'price' => '99.99'
+    //     // ]);
 
-        $response = $this->get('/');
+    //     $response = $this->get('/');
 
-        $response->assertStatus(200);
+    //     $response->assertDontSeeText('No products found.');
 
-        $response->assertDontSee('No products found.');
+    //     $response->assertStatus(200);
 
-        $response->assertSee('product 1');
+    //     // $response->assertSee('product 1');
 
-        $view_products = $response->viewData('products');
-        dd($view_products);
+    //     // $view_products = $response->viewData('products');
+    //     // dd($view_products);
 
-        $this->assertEquals($product->anem, $view_products->first()->name());
-    }
+    //     // $this->assertEquals($product->anem, $view_products->first()->name());
+    // }
 }
